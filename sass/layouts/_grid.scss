@@ -1,0 +1,32 @@
+.grid-test {
+    height : 100vh ;
+}
+
+.row {
+    max-width: 100rem;
+    margin : 0 auto  ; 
+    background-color: rgb(196, 141, 69);
+    margin-bottom: $gutter-vertical;
+
+    &::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    // &:last-child{
+    //     margin-right: 0;
+    // }
+}
+
+.col-1-of-2 {
+
+    width: 40%;
+
+    float : left ;
+
+    background-color: aquamarine;
+    margin-right: 20%;
+    &:last-child{
+        margin-right: 0;
+    }
+}
