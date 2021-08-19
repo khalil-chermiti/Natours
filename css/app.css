@@ -6,7 +6,7 @@ body {
   padding: 3rem; }
 
 .heading-primary {
-  color: white;
+  color: #ffff;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem; }
@@ -130,23 +130,31 @@ body {
     transform: translate(-50%, -50%);
     text-align: center; }
 
-.grid-test {
+/*
+* this grid is made out of the float property
+* used clear fix mixin 
+* used the calc() function and substructed the margin right to have a equally justified columns 
+*/
+.grid {
   height: 100vh; }
-
-.row {
-  max-width: 100rem;
-  margin: 0 auto;
-  background-color: #c48d45;
-  margin-bottom: 8rem; }
-  .row::after {
-    content: "";
-    display: block;
-    clear: both; }
-
-.col-1-of-2 {
-  width: 40%;
-  float: left;
-  background-color: aquamarine;
-  margin-right: 20%; }
-  .col-1-of-2:last-child {
-    margin-right: 0; }
+  .grid .row {
+    max-width: 114rem;
+    margin: 0 auto;
+    background-color: #c48d45; }
+    .grid .row:not(:last-child) {
+      margin-bottom: 8rem; }
+    .grid .row::after {
+      content: "";
+      display: table;
+      clear: both; }
+    .grid .row [class^="col-"] {
+      float: left;
+      background-color: aquamarine; }
+      .grid .row [class^="col-"]:not(:last-child) {
+        margin-right: 4rem; }
+    .grid .row .col-1-of-2 {
+      width: calc((100% - 4rem) / 2); }
+    .grid .row .col-1-of-3 {
+      width: calc((100% - 4rem * 2) / 3); }
+    .grid .row .col-1-of-3 {
+      width: calc((100% - 4rem * 2) / 3); }

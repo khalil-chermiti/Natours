@@ -1,32 +1,44 @@
-.grid-test {
-    height : 100vh ;
-}
+/*
+* this grid is made out of the float property
+* used clear fix mixin 
+* used the calc() function and substructed the margin right to have a equally justified columns 
+*/
 
-.row {
-    max-width: 100rem;
-    margin : 0 auto  ; 
+// this class wraps the grid
+.grid {
+  height: 100vh;
+  // this is a row of the grid
+  .row {
+    max-width: $grid-width;
+    margin: 0 auto;
     background-color: rgb(196, 141, 69);
-    margin-bottom: $gutter-vertical;
 
-    &::after{
-        content: "";
-        display: block;
-        clear: both;
+    &:not(:last-child) {
+      margin-bottom: $gutter-vertical;
     }
-    // &:last-child{
-    //     margin-right: 0;
-    // }
-}
+    
+    @include clearfix;
 
-.col-1-of-2 {
+    // selecting all classes starting with  'col-'
+    [class^="col-"] {
+      float: left;
+      background-color: aquamarine;
 
-    width: 40%;
-
-    float : left ;
-
-    background-color: aquamarine;
-    margin-right: 20%;
-    &:last-child{
-        margin-right: 0;
+      &:not(:last-child) {
+        margin-right: $gutter-horizental;
+      }
     }
+
+    .col-1-of-2 {
+      width: calc((100% - #{$gutter-horizental}) / 2);
+    }
+
+    .col-1-of-3 {
+      width: calc((100% - #{$gutter-horizental} * 2) / 3);
+    }
+
+    .col-1-of-3 {
+      width: calc((100% - #{$gutter-horizental} * 2) / 3);
+    }
+  }
 }
