@@ -4,41 +4,35 @@
 * used the calc() function and substructed the margin right to have a equally justified columns 
 */
 
-// this class wraps the grid
-.grid {
-  height: 100vh;
-  // this is a row of the grid
-  .row {
-    max-width: $grid-width;
-    margin: 0 auto;
-    background-color: rgb(196, 141, 69);
+// this is a row
+.row {
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix;
+
+  // selecting all classes starting with  'col-'
+  [class^="col-"] {
+    float: left;
 
     &:not(:last-child) {
-      margin-bottom: $gutter-vertical;
+      margin-right: $gutter-horizental;
     }
-    
-    @include clearfix;
+  }
 
-    // selecting all classes starting with  'col-'
-    [class^="col-"] {
-      float: left;
-      background-color: aquamarine;
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizental}) / 2);
+  }
 
-      &:not(:last-child) {
-        margin-right: $gutter-horizental;
-      }
-    }
+  .col-1-of-3 {
+    width: calc((100% - #{$gutter-horizental} * 2) / 3);
+  }
 
-    .col-1-of-2 {
-      width: calc((100% - #{$gutter-horizental}) / 2);
-    }
-
-    .col-1-of-3 {
-      width: calc((100% - #{$gutter-horizental} * 2) / 3);
-    }
-
-    .col-1-of-3 {
-      width: calc((100% - #{$gutter-horizental} * 2) / 3);
-    }
+  .col-1-of-3 {
+    width: calc((100% - #{$gutter-horizental} * 3) / 4);
   }
 }

@@ -7,26 +7,57 @@ body {
 }
 
 .heading-primary {
-    color: $color-white;
-    text-transform: uppercase;
-    backface-visibility: hidden;
-    margin-bottom: 6rem;
-  
-    &--main {
-      display: block;
-      font-size: 6rem;
-      font-weight: 400;
-      letter-spacing: 3.5rem;
-      animation: moveInLeft 1s ease-in;
-    }
-  
-    &--sub {
-      display: block;
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: 1.7rem;
-      animation: moveInRight 1s ease-in;
-    }
+  color: $color-white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-in;
   }
-  
-  
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.7rem;
+    animation: moveInRight 1s ease-in;
+  }
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  display: inline-block;
+
+  transition: all 0.2s;
+
+  // background text clip
+  background-image: linear-gradient(to right, $Light-green, $Light-green);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  &:hover {
+    transform: skewY(2deg);
+    text-shadow: 2px 10px 1rem rgba($color-black, $alpha: 0.2);
+  }
+}
+.heading-tertiary {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.paragraph {
+  font-size: 1.6rem ;
+  text-align: justify;
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  } 
+}

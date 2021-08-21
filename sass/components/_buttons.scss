@@ -29,13 +29,13 @@
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 1rem 2rem rgba(black, 0.2);
-    
+
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0;
     }
   }
-  
+
   &:active {
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba(black, 0.2);
@@ -52,5 +52,30 @@
     width: 100%;
     border-radius: 5rem;
     transition: all 0.4s;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    display: inline-block;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: $Dark-green;
+    padding: 3px;
+    border-bottom: 1px solid $Dark-green;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-color: $Dark-green;
+    color: $light-dark;
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.25) ;
+  }
+  
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0 .5rem 1rem rgba($color: #000000, $alpha: 0.25) ;
   }
 }
