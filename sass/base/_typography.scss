@@ -34,13 +34,12 @@ body {
   font-weight: 700;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
-  display: inline-block;
-
+  
   transition: all 0.2s;
-
+  
   // background text clip
+  display: inline-block;
   background-image: linear-gradient(to right, $Light-green, $Light-green);
-  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 
