@@ -1,0 +1,122 @@
+.card {
+    position: relative;
+
+    // setting the perspective so we get a nice rotation 
+    perspective: 150rem ;
+
+    // the height works as a clear fix , we specify it so the card won't collapse
+    height: 50rem;
+
+    &__side {
+        width: 100%;
+        height: 50rem;
+        font-size: $default-font-size ;
+        color: $color-white;
+
+        border-radius: 5px;
+        overflow: hidden;
+        transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        box-shadow: 2px 1rem 4rem rgba($color: #000000, $alpha: 0.3);
+
+        position: absolute; 
+        top: 0;
+        left : 0;
+
+        // used so we don't see the back side of each card 
+        backface-visibility: hidden;
+
+        &--back {
+            transform: rotateY(180deg) ;
+            &--1 {
+                background-image: linear-gradient(120deg , $Light-orange, $Dark-orange);
+            }
+            &--2 {
+                background-image: linear-gradient(120deg , $Light-green, $Dark-green);
+            }
+            &--3 {
+                background-image: linear-gradient(120deg , $Light-blue, $Dark-blue);
+            }
+        }
+    }
+
+    &:hover &__side--front  {
+        transform: rotateY(-180deg) ;
+    } 
+    
+    &:hover &__side--back  {
+        transform: rotateY(0deg) ;
+    } 
+
+    &__image{
+        height : 40% ;
+        background-size: cover;
+        clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+        background-blend-mode: multiply;
+        
+        &--1 {
+            background-image :linear-gradient(to right bottom , $Light-orange, $Dark-orange ), url(../img/nat-5.jpg) ;
+        }
+        &--2 {
+            background-image :  linear-gradient(to right bottom , $Light-green, $Dark-green )  , url(../img/nat-6.jpg) ;
+        }
+        &--3 {
+            background-image : linear-gradient(to right bottom , $Light-blue, $Dark-blue ) , url(../img/nat-7.jpg) ;
+        }
+
+    }
+
+    &__header {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform : uppercase ;
+        text-align: right;
+        color : $color-white ;
+
+        position : absolute ; 
+        top : 12rem ;
+        right : 2rem ;
+
+         
+    }
+
+    &__header-span {
+        padding: 1rem 1.5rem ;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+        &--1 {
+            background-image: 
+            linear-gradient(to right, rgba($Light-orange , .8) , rgba($Dark-orange, 0.8)) ,
+            linear-gradient(to right, rgba($Light-orange , .8) , rgba($Dark-orange, 0.8));
+        }
+        &--2 {
+            background-image: 
+            linear-gradient(to right, rgba($Light-green , .8) , rgba($Dark-green, 0.8)) ,
+            linear-gradient(to right, rgba($Light-green , .8) , rgba($Dark-green, 0.8)) ;
+        }
+        &--3 {
+            background-image: 
+            linear-gradient(to right, rgba($Light-blue , .8) , rgba($Dark-blue, 0.8)) ,
+            linear-gradient(to right, rgba($Light-blue , .8) , rgba($Dark-blue, 0.8));
+        }
+    }
+
+    &__details {
+        padding: 3rem;
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto ;
+            li{
+                padding : 1rem ;
+                text-align: center;
+                color: $grey-light;
+                font-size: $default-font-size;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $grey-light;
+                }
+            }
+        }
+    }
+    
+}
