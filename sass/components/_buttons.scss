@@ -14,10 +14,18 @@
 
   &--white {
     color: $grey-light;
-    background-color: white;
+    background-color: $color-white;
 
     &::after {
-      background-color: white;
+      background-color: $color-white;
+    }
+  }
+  &--green {
+    color: $color-white;
+    background-color: $Dark-green;
+
+    &::after {
+      background-color: $Dark-green;
     }
   }
 
