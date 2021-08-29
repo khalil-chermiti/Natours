@@ -7,13 +7,15 @@
 @import "base/typography" ;
 @import "base/base" ;
 @import "base/animations" ;
-@import "base/utilities" ;
+@import "base/utilities"   ;
 
 // components 
 @import "components/buttons" ;
 @import "components/card" ;
 @import "components/composition" ;
 @import "components/feature-box" ;
+@import "components/story";
+@import "components/bg-video";
 
 
 // layouts
