@@ -95,27 +95,27 @@ body {
   text-align: center; }
 
 .display-relative {
-  position: relative; }
+  position: relative !important; }
 
 .margin-bottom-s {
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem !important; }
 
 .margin-bottom-m {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .margin-bottom-h {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .margin-top-s {
-  margin-top: 2rem; }
+  margin-top: 2rem !important; }
 
 .margin-top-m {
-  margin-top: 4rem; }
+  margin-top: 4rem !important; }
 
 .margin-top-h {
-  margin-top: 8rem; }
+  margin-top: 8rem !important; }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   font-size: 1.6rem;
   text-transform: uppercase;
   text-decoration: none;
@@ -124,7 +124,9 @@ body {
   border-radius: 4rem;
   transition-property: transform, box-shadow;
   transition-duration: 0.2s;
-  position: relative; }
+  position: relative;
+  border: none;
+  cursor: pointer; }
 
 .btn--white {
   color: #777;
@@ -149,7 +151,7 @@ body {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
-.btn:active {
+.btn:active, .btn:focus {
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
@@ -373,11 +375,92 @@ body {
   opacity: 0.2;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   z-index: -1; }
   .bg-video__content {
     width: 100%;
     height: 100%;
     object-fit: cover; }
+
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  display: block;
+  width: 90%;
+  font-family: inherit;
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 3px;
+  background-color: #ffff;
+  border: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s; }
+  .form__input:focus {
+    box-sizing: inherit;
+    outline: none;
+    color: inherit;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #28b485; }
+  .form__input:focus:invalid {
+    border-bottom: 3px solid #ff7730; }
+  .form__input::-webkit-input-placeholder {
+    text-transform: uppercase;
+    color: 999; }
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0.7rem;
+  margin-left: 2rem;
+  display: block;
+  transition: all 0.3s;
+  visibility: visible;
+  opacity: 1; }
+
+.form__input:placeholder-shown ~ .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
+
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding-left: 4.5rem;
+  position: relative; }
+
+.form__radio-button {
+  width: 3rem;
+  height: 3rem;
+  display: inline-block;
+  border: 5px solid #28b485;
+  border-radius: 50%;
+  position: absolute;
+  top: -0.4rem;
+  left: 0; }
+  .form__radio-button::after {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #28b485;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
 
 .header {
   height: 95vh;
@@ -446,3 +529,17 @@ body {
 .section-stories {
   padding: 15rem 0;
   position: relative; }
+
+.section-booking {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right, #7ed56f, #28b485); }
+
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url("../img/nat-10.jpg");
+  background-size: cover;
+  height: 50rem;
+  border-radius: 3px;
+  box-shadow: 2px 3rem 6rem rgba(0, 0, 0, 0.5); }
+  .book__form {
+    width: 50%;
+    padding: 6rem; }
