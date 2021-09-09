@@ -10,6 +10,22 @@
     // the height works as a clear fix , we specify it so the card won't collapse
     height: 50rem;
 
+    @include responsive(tab-land) {
+        width: 50%;
+        margin: auto;
+        height: 60rem;
+    } ;
+
+    @include responsive(phone) {
+        width: 65%;
+        margin: auto;
+    };
+
+    @include responsive(small) {
+        width: 80%;
+        margin: auto;
+    }
+
     &__side {
         width: 90%;
         height: 50rem;
@@ -27,6 +43,11 @@
 
         // used so we don't see the back side of each card 
         backface-visibility: hidden;
+
+        @include responsive(tab-land) {
+            width: 100%;
+            height: 60rem;
+        }
 
         &--back {
             transform: rotateY(180deg) ;

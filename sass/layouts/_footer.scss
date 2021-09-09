@@ -1,55 +1,64 @@
 .footer {
-    background-color: $grey-light-3;
-    padding: 5rem 0 ;
-    font-size: 1.4rem ;
+  background-color: $grey-light-3;
+  padding: 5rem 0;
+  font-size: 1.4rem;
 
-    &__logo-box{
-        
+  @include responsive (phone) {
+      padding : 5rem 2rem ;
+  }
+  &__logo {
+    width: 15rem;
+    height: auto;
+
+    @include responsive (phone) {
+        width: 10rem;
     }
-    &__logo{
-        width: 15rem;
-        height: auto;
-    }
-    &__list{
-        padding-top: 2rem;
-        border-top: 1px solid $grey-light-2;
-    }
-    &__list-item{
-        display: inline-block;
-        list-style: none;
+    
+  }
+  &__list {
+    padding-top: 2rem;
+    border-top: 1px solid $grey-light-2;
+  }
+  &__list-item {
+    display: inline-block;
+    list-style: none;
 
-        &:not(:last-child) {
-            margin-right: 1.5rem;
-        }
-
-        
-
-        }
-    &__link{
-        &:link ,
-        &:visited {
-            display: inline-block;
-            font-family: inherit;
-            text-decoration: none;
-            color: $color-white;
-            transition: all 0.3s ;
-            padding: 0 1rem ;
-            font-weight: 700;
-        }
-
-        &:hover , 
-        &:active ,
-        &:focus {
-            color: $Dark-green;
-            box-shadow: 0 1rem 2rem rgba($color-black , 0.6) ;
-            transform: rotate(3deg)  scale(1.02);
-        }
+    &:not(:last-child) {
+      margin-right: 1.5rem;
     }
 
-    &__copyright {
-        padding-top: 2rem;
-        border-top: 1px solid $grey-light-2;
-
-        text-align: justify;
+    @include responsive(phone) {
+      display: block;
+      margin: 1rem auto !important;
+      text-align: center;
+      font-size: 1.6rem;
     }
+  }
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-family: inherit;
+      text-decoration: none;
+      color: $color-white;
+      transition: all 0.3s;
+      padding: 0 1rem;
+      font-weight: 700;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $Dark-green;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.6);
+      transform: rotate(3deg) scale(1.02);
+    }
+  }
+
+  &__copyright {
+    padding-top: 2rem;
+    border-top: 1px solid $grey-light-2;
+
+    text-align: justify;
+  }
 }

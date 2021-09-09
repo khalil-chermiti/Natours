@@ -34,5 +34,47 @@
   padding-left: $val;
 }
 
-// text shadow on demand
+// media query manager
+// breakpoints :
+// 300 - 600
+// 600 - 900
+// 900 - 1200
+// 1200 - 1800
+// 1800+
 
+
+// // 1px = 6.25em 
+
+
+@mixin responsive($screen-res) {
+  // small
+  @if $screen-res == "small" {
+    @media (max-width: 25em) {
+      @content;
+    }
+  }
+  // 600px
+  @if $screen-res == "phone" {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  // 900px
+  @if $screen-res == "tab-port" {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  // 1200px
+  @if $screen-res == "tab-land" {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  // 1800px
+  @if $screen-res == "desktop-big" {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

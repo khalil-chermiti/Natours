@@ -12,6 +12,13 @@
     right: 6.5rem;
     z-index: 11;
 
+    @include responsive(tab-port) {
+      width: 5rem;
+      height: 5rem;
+      top: 2.5rem;
+      right: 3.5rem;
+    }
+
     background-color: $color-white;
     box-shadow: 0 1rem 3rem rgba($color-black, 0.3);
     border-radius: 50%;
@@ -21,15 +28,22 @@
   &__background {
     width: 5.5rem;
     height: 5.5rem;
-    position: fixed;
     top: 6.8rem;
     right: 6.8rem;
+    position: fixed;
     z-index: 10;
     background-image: radial-gradient($Light-green, $Dark-green);
     border-radius: 50%;
 
     transform: scale(1);
     transition: all 0.3s;
+
+    @include responsive(tab-port) {
+      width: 4.5rem;
+      height: 4.5rem;
+      top: 2.8rem;
+      right: 3.8rem;
+    }
   }
 
   &__nav {
@@ -103,7 +117,12 @@
     top: 2rem;
     width: 3rem;
     height: 2px;
-    background-color: $grey-light-3;
+    background-color: rgba($grey-light-3, 0.6);
+    border-radius: 40px;
+
+    @include responsive(tab-port) {
+      top: 1.5rem;
+    }
 
     &:before,
     &:after {
@@ -114,6 +133,8 @@
       height: 2px;
       background-color: $grey-light-3;
       transition: all 0.3s;
+      background-color: rgba($grey-light-3, 0.6);
+      border-radius: 40px;
 
       //   z-index: 11;
     }
@@ -133,8 +154,8 @@
   }
   &__checkbox:checked ~ &__button &__icon {
     background-color: transparent;
-}
-&__checkbox:checked ~ &__button &__icon:before {
+  }
+  &__checkbox:checked ~ &__button &__icon:before {
     transform: rotate(20.13turn);
     top: 0.1rem;
   }

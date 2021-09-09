@@ -13,6 +13,10 @@
     margin-bottom: $gutter-vertical;
   }
 
+  @include responsive(tab-land) {
+    max-width: $grid-width-tab;
+  }
+
   @include clearfix;
 
   // selecting all classes starting with  'col-'
@@ -21,6 +25,16 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizental;
+
+
+      @include responsive(tab-land) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-tab;
+      }
+    }
+
+    @include responsive(tab-land) {
+      width: 100% !important;
     }
   }
 
