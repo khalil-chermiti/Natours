@@ -1,172 +1,234 @@
 .card {
+  // functionality
 
-    // functionality 
+  position: relative;
 
-    position: relative;
+  // setting the perspective so we get a nice rotation
+  perspective: 150rem;
 
-    // setting the perspective so we get a nice rotation 
-    perspective: 150rem ;
+  // the height works as a clear fix , we specify it so the card won't collapse
+  height: 50rem;
 
-    // the height works as a clear fix , we specify it so the card won't collapse
+  @include responsive(tab-land) {
+    width: 50%;
+    margin: auto;
+    // margin-bottom: 10rem;
+    // height: 60rem;
+  }
+
+  @include responsive(phone) {
+    width: 65%;
+    margin: auto;
+  }
+
+  @include responsive(small) {
+    width: 80%;
+    margin: auto;
+  }
+
+  &__side {
+    width: 90%;
     height: 50rem;
+    font-size: $default-font-size;
+    color: $color-white;
+
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    box-shadow: 2px 1rem 4rem rgba($color: #000000, $alpha: 0.3);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    // used so we don't see the back side of each card
+    backface-visibility: hidden;
 
     @include responsive(tab-land) {
-        width: 50%;
-        margin: auto;
-        height: 60rem;
-    } ;
-
-    @include responsive(phone) {
-        width: 65%;
-        margin: auto;
-    };
-
-    @include responsive(small) {
-        width: 80%;
-        margin: auto;
+      width: 100%;
+      height: 50rem;
     }
 
+    &--back {
+      transform: rotateY(180deg);
+      &--1 {
+        background-image: linear-gradient(120deg, $Light-orange, $Dark-orange);
+      }
+      &--2 {
+        background-image: linear-gradient(120deg, $Light-green, $Dark-green);
+      }
+      &--3 {
+        background-image: linear-gradient(120deg, $Light-blue, $Dark-blue);
+      }
+    }
+  }
+
+    &:hover &__side--front {
+      transform: rotateY(-180deg);
+    }
+
+    &:hover &__side--back {
+      transform: rotateY(0deg);
+    }
+
+  // front side
+
+  &__image {
+    height: 40%;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+    background-blend-mode: multiply;
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $Light-orange,
+          $Dark-orange
+        ),
+        url(../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $Light-green,
+          $Dark-green
+        ),
+        url(../img/nat-6.jpg);
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $Light-blue,
+          $Dark-blue
+        ),
+        url(../img/nat-7.jpg);
+    }
+  }
+
+  &__header {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+  }
+
+  &__header-span {
+    padding: 1rem 1.5rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    &--1 {
+      background-image: linear-gradient(
+          to right,
+          rgba($Light-orange, 0.8),
+          rgba($Dark-orange, 0.8)
+        ),
+        linear-gradient(
+          to right,
+          rgba($Light-orange, 0.8),
+          rgba($Dark-orange, 0.8)
+        );
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right,
+          rgba($Light-green, 0.8),
+          rgba($Dark-green, 0.8)
+        ),
+        linear-gradient(
+          to right,
+          rgba($Light-green, 0.8),
+          rgba($Dark-green, 0.8)
+        );
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right,
+          rgba($Light-blue, 0.8),
+          rgba($Dark-blue, 0.8)
+        ),
+        linear-gradient(to right, rgba($Light-blue, 0.8), rgba($Dark-blue, 0.8));
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        padding: 1rem;
+        text-align: center;
+        color: $grey-light;
+        font-size: $default-font-size;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $grey-light;
+        }
+      }
+    }
+  }
+
+  // back side
+
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+  }
+
+  &__price-box {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+  }
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+
+  @include responsive(tab-port) {
+    height: auto !important;
     &__side {
-        width: 90%;
-        height: 50rem;
-        font-size: $default-font-size ;
-        color: $color-white;
+      position: relative;
+      height: auto;
 
-        border-radius: 5px;
-        overflow: hidden;
-        transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-        box-shadow: 2px 1rem 4rem rgba($color: #000000, $alpha: 0.3);
+      &--front {
+        padding-bottom: 8rem;
+      }
 
-        position: absolute; 
-        top: 0;
-        left : 0;
-
-        // used so we don't see the back side of each card 
-        backface-visibility: hidden;
-
-        @include responsive(tab-land) {
-            width: 100%;
-            height: 60rem;
-        }
-
-        &--back {
-            transform: rotateY(180deg) ;
-            &--1 {
-                background-image: linear-gradient(120deg , $Light-orange, $Dark-orange);
-            }
-            &--2 {
-                background-image: linear-gradient(120deg , $Light-green, $Dark-green);
-            }
-            &--3 {
-                background-image: linear-gradient(120deg , $Light-blue, $Dark-blue);
-            }
-        }
+      &--back {
+        transform: rotateY(0);
+        height: 30rem !important;
+        clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
+        transform: translateY(-8rem);
+        border-radius: 0;
+        margin-top: -2rem;
+      }
     }
-
-    &:hover &__side--front  {
-        transform: rotateY(-180deg) ;
-    } 
-    
-    &:hover &__side--back  {
-        transform: rotateY(0deg) ;
-    } 
-
-    // front side 
-
-    &__image{
-        height : 40% ;
-        background-size: cover;
-        clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
-        background-blend-mode: multiply;
-        
-        &--1 {
-            background-image :linear-gradient(to right bottom , $Light-orange, $Dark-orange ), url(../img/nat-5.jpg) ;
-        }
-        &--2 {
-            background-image :  linear-gradient(to right bottom , $Light-green, $Dark-green )  , url(../img/nat-6.jpg) ;
-        }
-        &--3 {
-            background-image : linear-gradient(to right bottom , $Light-blue, $Dark-blue ) , url(../img/nat-7.jpg) ;
-        }
-
+    &__image {
+      height: 25rem;
     }
-
-    &__header {
-        font-size: 2.8rem;
-        font-weight: 300;
-        text-transform : uppercase ;
-        text-align: right;
-        color : $color-white ;
-
-        position : absolute ; 
-        top : 12rem ;
-        right : 2rem ;  
-    }
-
-    &__header-span {
-        padding: 1rem 1.5rem ;
-        box-decoration-break: clone;
-        -webkit-box-decoration-break: clone;
-        &--1 {
-            background-image: 
-            linear-gradient(to right, rgba($Light-orange , .8) , rgba($Dark-orange, 0.8)) ,
-            linear-gradient(to right, rgba($Light-orange , .8) , rgba($Dark-orange, 0.8));
-        }
-        &--2 {
-            background-image: 
-            linear-gradient(to right, rgba($Light-green , .8) , rgba($Dark-green, 0.8)) ,
-            linear-gradient(to right, rgba($Light-green , .8) , rgba($Dark-green, 0.8)) ;
-        }
-        &--3 {
-            background-image: 
-            linear-gradient(to right, rgba($Light-blue , .8) , rgba($Dark-blue, 0.8)) ,
-            linear-gradient(to right, rgba($Light-blue , .8) , rgba($Dark-blue, 0.8));
-        }
-    }
-
-    &__details {
-        padding: 3rem;
-        ul {
-            list-style: none;
-            width: 80%;
-            margin: 0 auto ;
-            li{
-                padding : 1rem ;
-                text-align: center;
-                color: $grey-light;
-                font-size: $default-font-size;
-
-                &:not(:last-child) {
-                    border-bottom: 1px solid $grey-light;
-                }
-            }
-        }
-    }
-
-    // back side 
 
     &__cta {
-        position : absolute ;
-        top : 50% ;
-        left : 50% ;
-        transform: translate(-50% , -50%);
-        width : 100% ;
-        text-align : center ;
+      height: 25rem;
+      padding-top: 3rem;
     }
-    
     &__price-box {
-        text-align : center ;
-        color : $color-white ; 
-        margin-bottom: 8rem;
-
+      margin-bottom: 1rem;
+      margin-top: 2rem;
     }
-    &__price-only {
-        font-size : 1.4rem ;
-        text-transform : uppercase ;
-    }
-    &__price-value {
-        font-size : 6rem ;
-        font-weight : 100 ; 
-    }
-    
+  }
 }

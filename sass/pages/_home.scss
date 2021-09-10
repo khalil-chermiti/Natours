@@ -71,15 +71,35 @@
       transparent 50%
     ),
     url('../img/nat-10.jpg') ;
-    background-size: cover;
+    background-size: cover
+  ;
 
+  @include responsive(tab-land){
+    background-image: linear-gradient(
+      105deg,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)),
+      url(../img/nat-10.jpg)
+    ;
+  }
   height: 50rem;
   border-radius: 3px;
   box-shadow: 2px 3rem 6rem rgba($color-black, 0.5) ;
 
+  @include responsive(phone){
+    width : 90% ; 
+    margin: auto;
+  }
+
   &__form {
     width : 50% ; 
     padding : 6rem ; 
+    @include responsive(tab-land){
+      width : 100% ; 
+    }
+    @include responsive(small){
+      padding: 4rem 2rem;
+    }
   }
 
 }

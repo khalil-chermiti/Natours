@@ -10,6 +10,19 @@
     transform: skewX(-7deg);
 
     position : relative ;
+
+    @include responsive(tab-land){
+        width: 100%;
+    }
+    @include responsive(tab-port){
+        transform: skewX(0deg);
+        padding: 7rem;
+    }
+    @include responsive(phone){
+        width : 90% ;
+        padding: 2rem;
+        padding-left: 5rem;
+    }
     // the shape outside requires a defined dimentions and float 
     &__shape {
 
@@ -24,18 +37,28 @@
         transform : translateX(-3rem) skewX(7deg) ; 
 
         overflow: hidden;
+
+        @include responsive(tab-port){
+            transform: translateX(-3rem) skewX(0deg);
+        }
+        @include responsive(phone){
+            margin-left: 2rem;
+        }
     }
+
+        
 
     &__img {
         transform: translateX(-3rem) scale(1.4) ;
         height: 100%;
         transition: all 0.3s ease;
-        
-        backface-visibility: hidden;
     }
 
     &__text {
         transform:skewX(7deg);
+        @include responsive(tab-port){
+            transform:skewX(0deg);
+        }
     }
     &__caption {
         text-align: center; 

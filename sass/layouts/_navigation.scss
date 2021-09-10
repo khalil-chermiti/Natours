@@ -66,6 +66,13 @@
     font-weight: 300;
     text-align: center;
     transition: all 0.8s cubic-bezier(0.46, -0.31, 0.07, 1.17);
+
+    @include responsive(tab-port) {
+      width: 70%;
+    }
+    @include responsive(phone) {
+      width: 85%;
+    }
   }
   &__item {
     list-style: none;

@@ -7,7 +7,7 @@
   box-shadow: 0 1.5rem 4rem rgba($color-black, $alpha: 0.2);
   transition: all 0.3s; 
   @include responsive(tab-land){
-    width: 50rem;
+    width: 40rem;
     margin: auto;
   }
   @include responsive(phone){
