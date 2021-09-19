@@ -36,13 +36,19 @@
             >
           </li>
           <li class="navigation__item">
-            <a href="#section-tours" class="navigation__link"><span>03</span> Your tours</a>
+            <a href="#section-tours" class="navigation__link"
+              ><span>03</span> Your tours</a
+            >
           </li>
           <li class="navigation__item">
-            <a href="#section-stories" class="navigation__link"><span>04</span> Stories</a>
+            <a href="#section-stories" class="navigation__link"
+              ><span>04</span> Stories</a
+            >
           </li>
           <li class="navigation__item">
-            <a href="#section-booking" class="navigation__link"><span>05</span> Book now</a>
+            <a href="#section-booking" class="navigation__link"
+              ><span>05</span> Book now</a
+            >
           </li>
         </ul>
       </nav>
@@ -93,17 +99,27 @@
           </div>
           <div class="col-1-of-2">
             <div class="composition">
+              <!-- 
+                * the sizes attributes attributes help browser to decide whick image to download , based on view port width
+                * the src attribute is a fallback for ollder browsers  
+               -->
               <img
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width : 900px) 20vw , (max-width : 600px) 30vh , 300px"
                 src="img/nat-1.jpg"
                 alt="nature image"
                 class="composition__photo"
               />
               <img
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width : 900px) 20vw , (max-width : 600px) 30vh , 300px"
                 src="img/nat-2.jpg"
                 alt="nature image"
                 class="composition__photo"
               />
               <img
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width : 900px) 20vw , (max-width : 600px) 30vh , 300px"
                 src="img/nat-3.jpg"
                 alt="nature image"
                 class="composition__photo"
@@ -124,10 +140,9 @@
               <p class="feature-box__paragraph">
                 Et qui proident cillum voluptate ullamco nisi ut id dolor irure
                 labore. Et qui proident cillum voluptate ullamco nisi ut id
-                dolor irure labore.
-                Et qui proident cillum voluptate ullamco nisi ut id dolor irure
-                labore. Et qui proident cillum voluptate ullamco nisi ut id
-                dolor irure labore.
+                dolor irure labore. Et qui proident cillum voluptate ullamco
+                nisi ut id dolor irure labore. Et qui proident cillum voluptate
+                ullamco nisi ut id dolor irure labore.
               </p>
             </div>
           </div>
@@ -138,10 +153,9 @@
               <p class="feature-box__paragraph">
                 Et qui proident cillum voluptate ullamco nisi ut id dolor irure
                 labore. Et qui proident cillum voluptate ullamco nisi ut id
-                dolor irure labore.
-                Et qui proident cillum voluptate ullamco nisi ut id dolor irure
-                labore. Et qui proident cillum voluptate ullamco nisi ut id
-                dolor irure labore.
+                dolor irure labore. Et qui proident cillum voluptate ullamco
+                nisi ut id dolor irure labore. Et qui proident cillum voluptate
+                ullamco nisi ut id dolor irure labore.
               </p>
             </div>
           </div>
@@ -152,10 +166,9 @@
               <p class="feature-box__paragraph">
                 Et qui proident cillum voluptate ullamco nisi ut id dolor irure
                 labore. Et qui proident cillum voluptate ullamco nisi ut id
-                dolor irure labore.
-                Et qui proident cillum voluptate ullamco nisi ut id dolor irure
-                labore. Et qui proident cillum voluptate ullamco nisi ut id
-                dolor irure labore.
+                dolor irure labore. Et qui proident cillum voluptate ullamco
+                nisi ut id dolor irure labore. Et qui proident cillum voluptate
+                ullamco nisi ut id dolor irure labore.
               </p>
             </div>
           </div>
@@ -168,10 +181,9 @@
               <p class="feature-box__paragraph">
                 Et qui proident cillum voluptate ullamco nisi ut id dolor irure
                 labore. Et qui proident cillum voluptate ullamco nisi ut id
-                dolor irure labore.
-                Et qui proident cillum voluptate ullamco nisi ut id dolor irure
-                labore. Et qui proident cillum voluptate ullamco nisi ut id
-                dolor irure labore.
+                dolor irure labore. Et qui proident cillum voluptate ullamco
+                nisi ut id dolor irure labore. Et qui proident cillum voluptate
+                ullamco nisi ut id dolor irure labore.
               </p>
             </div>
           </div>
@@ -418,11 +430,23 @@
 
     <footer class="footer">
       <div class="footer__logo-box center-div margin-bottom-m">
-        <img
-          class="footer__logo"
-          srcset="img/logo-green-2x.png 1x , img/logo-green-2x.png 2x" 
-          alt="footer logo"
-        />
+        <!-- art direction -->
+        <picture class="footer__logo">
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width : 37.5em)"
+            src="img/logo-green-2x.png "
+          />
+          <!-- density switching -->
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            src="img/logo-green-2x.png "
+            alt="footer logo"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">
@@ -457,32 +481,33 @@
         </div>
       </div>
     </footer>
-    
+
     <div class="popup" id="popup">
       <div class="popup__content">
         <div class="popup__left">
-          <img src="img/nat-8.jpg" alt="" class="popup__img">
-          <img src="img/nat-9.jpg" alt="" class="popup__img">
-        </div> 
+          <img src="img/nat-8.jpg" alt="" class="popup__img" />
+          <img src="img/nat-9.jpg" alt="" class="popup__img" />
+        </div>
         <div class="popup__right">
           <a href="#section-tours" class="popup__close">&times;</a>
           <h2 class="heading-secondary margin-bottom-s">Start booking now</h2>
-          <h3 class="heading-tertiary margin-bottom-s">Important &excl; read these terms first</h3>
+          <h3 class="heading-tertiary margin-bottom-s">
+            Important &excl; read these terms first
+          </h3>
           <p class="popup__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consequatur fugiat odit commodi aut aliquam. Repellendus, commodi!
-            Id obcaecati nostrum autem quasi architecto consectetur eum!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consequatur fugiat odit commodi aut aliquam. Repellendus, commodi!
-            Id obcaecati nostrum autem quasi architecto consectetur eum!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consequatur fugiat odit commodi aut aliquam. Repellendus, commodi!
-            Id obcaecati nostrum autem quasi architecto consectetur eum!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consequatur fugiat odit commodi aut aliquam. Repellendus, commodi!
-            Id obcaecati nostrum autem quasi architecto consectetur eum!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+            fugiat odit commodi aut aliquam. Repellendus, commodi! Id obcaecati
+            nostrum autem quasi architecto consectetur eum! Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Consequatur fugiat odit
+            commodi aut aliquam. Repellendus, commodi! Id obcaecati nostrum
+            autem quasi architecto consectetur eum! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Consequatur fugiat odit commodi aut aliquam.
+            Repellendus, commodi! Id obcaecati nostrum autem quasi architecto
+            consectetur eum! Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Consequatur fugiat odit commodi aut aliquam. Repellendus,
+            commodi! Id obcaecati nostrum autem quasi architecto consectetur
+            eum! Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
           <a href="" class="btn btn--green">Book now</a>
         </div>

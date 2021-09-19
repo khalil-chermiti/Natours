@@ -34,16 +34,8 @@
   padding-left: $val;
 }
 
-// media query manager
-// breakpoints :
-// 300 - 600
-// 600 - 900
-// 900 - 1200
-// 1200 - 1800
-// 1800+
 
-
-// // 1px = 6.25em 
+// 1px = 6.25em 
 
 
 @mixin responsive($screen-res) {
