@@ -343,7 +343,11 @@ body {
         padding-top: 3rem; }
       .card__price-box {
         margin-bottom: 1rem;
-        margin-top: 2rem; } }
+        margin-top: 2rem; }
+      .card:hover .card__side--front {
+        transform: rotateY(0deg); }
+      .card:hover .card__side--back {
+        transform: rotateY(0deg) translateY(-8rem); } }
 
 .composition {
   position: relative;

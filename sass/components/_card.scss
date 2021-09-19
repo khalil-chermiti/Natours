@@ -63,13 +63,13 @@
     }
   }
 
-    &:hover &__side--front {
-      transform: rotateY(-180deg);
-    }
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
 
-    &:hover &__side--back {
-      transform: rotateY(0deg);
-    }
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+  }
 
   // front side
 
@@ -229,6 +229,14 @@
     &__price-box {
       margin-bottom: 1rem;
       margin-top: 2rem;
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+  
+    &:hover &__side--back {
+      transform: rotateY(0deg) translateY(-8rem);
     }
   }
 }
