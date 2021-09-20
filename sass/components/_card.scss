@@ -42,6 +42,7 @@
     left: 0;
 
     // used so we don't see the back side of each card
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
     @include responsive(tab-land) {
