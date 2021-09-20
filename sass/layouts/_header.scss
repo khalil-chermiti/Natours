@@ -5,11 +5,22 @@
         rgba($Light-green, 0.8),
         rgba($Dark-green, 0.6)
       ),
-      url(../img/hero.jpg);
+      url(../img/hero-small.jpg);
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 0, 100% 0%, 100% 75vh, 0% 100%);
     position: relative;
+
+    // responsive images for different screen width and resolutions 
+ 
+    @media (min-resolution : 192dpi) and (min-width : 37.5em ) , (min-width : 125em) {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($Light-green, 0.8),
+        rgba($Dark-green, 0.6)
+      ),
+      url(../img/hero.jpg);
+    }
 
     @include responsive (phone) {
       clip-path: polygon(0 0, 100% 0%, 100% 85vh, 0% 100%);
