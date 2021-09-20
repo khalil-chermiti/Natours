@@ -725,7 +725,7 @@ body {
 
 /*
 * this grid is made out of the float property
-* used clear fix mixin 
+* used clearfix mixin 
 * used the calc() function and substructed the margin right to have a equally justified columns 
 */
 .row {

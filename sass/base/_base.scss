@@ -1,3 +1,5 @@
+// basic reset 
+
 *,
 *::before,
 *::after {
@@ -6,6 +8,7 @@
   box-sizing: inherit;
 }
 
+// make 1rem = 10px ==> ( (10px/16px) * 100)
 html {
   font-size: 62.5%; // so that 1rem = 10px
   scroll-behavior: smooth;
